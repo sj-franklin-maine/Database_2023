@@ -7,7 +7,7 @@ with open(config_file, "r") as f:
 
 connection_config = config["mysql"]
 
-def release_year_count():
+def releaseYearCount():
     # Connect to the MySQL database
     data_base = mysql.connector.connect(**connection_config)
     cursor = data_base.cursor()
@@ -32,46 +32,29 @@ def release_year_count():
     return result
 
 
-def get_series_by_star(star_name):
+def getSeries(star_name, genre=None):
     # Connect to the MySQL database
     data_base = mysql.connector.connect(**connection_config)
     cursor = data_base.cursor()
 
-    # SQL query to get series titles for a given star
-    query = f"""
-        SELECT B.title
-        FROM seriesstars A
-        JOIN tvseries B ON A.IMDB_id = B.IMDB_id
-        WHERE A.star = "{star_name}";
-    """
-
-    # Execute the query
-    cursor.execute(query)
-
-    # Fetch all the results as a list of tuples
-    result = cursor.fetchall()
-
-    # Close the database connection
-    data_base.close()
-
-    return result
-
-
-def get_series_by_star_and_genre(star_name, genre):
-    # Connect to the MySQL database
-    data_base = mysql.connector.connect(**connection_config)
-    cursor = data_base.cursor()
-
-    # SQL query to get series titles and ratings for a given star and genre
+    # SQL query to get series titles and ratings for a given star and optional genre
     # Could add an "order by" here
-    query = f"""
-        SELECT B.title, B.rating
-        FROM seriesstars A
-        JOIN tvseries B ON A.IMDB_id = B.IMDB_id
-        JOIN seriesgenre C ON B.IMDB_id = C.IMDB_id
-        WHERE A.star = "{star_name}"
-        AND C.genre = "{genre}";
-    """
+    if genre:
+        query = f"""
+            SELECT B.title, B.rating
+            FROM seriesstars A
+            JOIN tvseries B ON A.IMDB_id = B.IMDB_id
+            JOIN seriesgenre C ON B.IMDB_id = C.IMDB_id
+            WHERE A.star = "{star_name}"
+            AND C.genre = "{genre}";
+        """
+    else:
+        query = f"""
+            SELECT B.title, B.rating
+            FROM seriesstars A
+            JOIN tvseries B ON A.IMDB_id = B.IMDB_id
+            WHERE A.star = "{star_name}";
+        """
 
     # Execute the query
     cursor.execute(query)
@@ -85,7 +68,8 @@ def get_series_by_star_and_genre(star_name, genre):
     return result
 
 
-def get_series_costar(list_star_names):
+
+def getSeriesCostar(list_star_names):
     # Connect to the MySQL database
     data_base = mysql.connector.connect(**connection_config)
     cursor = data_base.cursor()
@@ -115,7 +99,7 @@ def get_series_costar(list_star_names):
     return result
 
 
-def get_average_rating():
+def getAverageRating():
     # Connect to the MySQL database
     data_base = mysql.connector.connect(**connection_config)
     cursor = data_base.cursor()
@@ -137,9 +121,9 @@ def get_average_rating():
     return average_rating
 
 
-def get_popular_series(star_name):
+def getPopularSeries(star_name):
     # Get the average rating
-    average_rating = get_average_rating()
+    average_rating = getAverageRating()
 
     # Connect to the MySQL database
     data_base = mysql.connector.connect(**connection_config)
@@ -166,7 +150,7 @@ def get_popular_series(star_name):
     return result
 
 
-def get_rating_per_genre():
+def getRatingPerGenre():
     # Connect to the MySQL database
     data_base = mysql.connector.connect(**connection_config)
     cursor = data_base.cursor()
@@ -192,7 +176,7 @@ def get_rating_per_genre():
     return result
 
 
-def get_series_director_star_genre(director, star, genre):
+def getSeriesDirectorStarGenre(director, star, genre):
     # Connect to the MySQL database
     data_base = mysql.connector.connect(**connection_config)
     cursor = data_base.cursor()
@@ -219,18 +203,19 @@ def get_series_director_star_genre(director, star, genre):
 
 
 def main():
-    release_year_list = release_year_count()
-    star_series_list = get_series_by_star("Gabriel Luna")
-    series_by_genre_list = get_series_by_star_and_genre("Gabriel Luna", "Crime")
+    release_year_list = releaseYearCount()
+    star_series_list = getSeries("Gabriel Luna")
+    series_by_genre_list = getSeries("Gabriel Luna", "Crime")
     list_star_names = ['Arnold Schwarzenegger', 'Monica Barbaro', 'Gabriel Luna']
     # costars_list = get_series_costar(list_star_names)
-    popular_list = get_popular_series("Arnold Schwarzenegger")
-    genre_rating_list = get_rating_per_genre()
-    specific_title_list = get_series_director_star_genre("Hidemaro Fujibayashi", "Kengo Takanashi", "Adventure")
+    popular_list = getPopularSeries("Arnold Schwarzenegger")
+    genre_rating_list = getRatingPerGenre()
+    specific_title_list = getSeriesDirectorStarGenre("Hidemaro Fujibayashi", "Kengo Takanashi", "Adventure")
 
     # Display the result
     # print(result_list) # This works! 1
     # print(star_series_list) # This works! 2
+    # print("\n\n")
     # print(series_by_genre_list) # This works! 3
     # print(get_average_rating()) # This works! 5
     # print(popular_list) # This works! 5
