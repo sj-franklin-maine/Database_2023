@@ -1,0 +1,33 @@
+1
+[(None, 6), (1874, 1), (1877, 1), (1878, 1), (1887, 2), (1888, 1), (1891, 1), (1892, 1), (1894, 14), (1895, 6), (1896, 7), (1897, 2), (1898, 5), (1899, 5), (1900, 5), (1902, 2), (1903, 4), (1904, 3), (1905, 2), (1906, 6), (1907, 2), (1908, 7), (1909, 14), (1910, 15), (1911, 25), (1912, 27), (1913, 28), (1914, 27), (1915, 33), (1916, 29), (1917, 41), (1918, 46), (1919, 46), (1920, 33), (1921, 36), (1922, 36), (1923, 37), (1924, 38), (1925, 74), (1926, 83), (1927, 96), (1928, 80), (1929, 131), (1930, 239), (1931, 231), (1932, 287), (1933, 262), (1934, 301), (1935, 353), (1936, 349), (1937, 350), (1938, 322), (1939, 336), (1940, 330), (1941, 359), (1942, 425), (1943, 381), (1944, 374), (1945, 303), (1946, 307), (1947, 302), (1948, 310), (1949, 350), (1950, 369), (1951, 385), (1952, 364), (1953, 389), (1954, 355), (1955, 392), (1956, 377), (1957, 427), (1958, 406), (1959, 383), (1960, 389), (1961, 385), (1962, 375), (1963, 356), (1964, 461), (1965, 497), (1966, 534), (1967, 546), (1968, 559), (1969, 531), (1970, 563), (1971, 616), (1972, 671), (1973, 650), (1974, 603), (1975, 554), (1976, 559), (1977, 573), (1978, 563), (1979, 605), (1980, 618), (1981, 643), (1982, 647), (1983, 732), (1984, 746), (1985, 773), (1986, 806), (1987, 902), (1988, 939), (1989, 942), (1990, 861), (1991, 873), (1992, 845), (1993, 942), (1994, 968), (1995, 1083), (1996, 1056), (1997, 1114), (1998, 1153), (1999, 1199), (2000, 1275), (2001, 1353), (2002, 1386), (2003, 1533), (2004, 1585), (2005, 1788), (2006, 1907), (2007, 1961), (2008, 2013), (2009, 2237), (2010, 2308), (2011, 2670), (2012, 2780), (2013, 3092), (2014, 3360), (2015, 3465), (2016, 3916), (2017, 4215), (2018, 4357), (2019, 4594), (2020, 4207), (2021, 4805), (2022, 5994), (2023, 2587)]
+
+2
+[('FUBAR', Decimal('6.5')), ('Matador', Decimal('5.8')), ('Wicked City', Decimal('6.5')), ('Eddie & Sunny', Decimal('7.5'))]
+
+3
+[('Matador', Decimal('5.8')), ('Wicked City', Decimal('6.5')), ('Eddie & Sunny', Decimal('7.5'))]
+
+4
+[('FUBAR',)]
+
+5
+[('FUBAR',), ('True Lies',), ('The Terminator',), ('Terminator 2: Judgment Day',), ('Conan the Barbarian',), ('Commando',), ('Total Recall',), ('Predator',), ('The Running Man',), ('Escape Plan',), ('T2 3-D: Battle Across Time',), ("Stan Lee's Superhero Kindergarten",), ('Terminator 2: Judgment Day',), ('Arnold',), ('Andre the Giant',), ('BMW: Zeus & Hera',), ('Pumping Iron',), ('The Game Changers',), ('Generation Iron',), ('Years of Living Dangerously',), ('The Comeback',), ('Dirty Harry: The Original',), ('Naked Hollywood',), ('RoboCop vs Terminator',)]
+
+6
+[('Documentary', Decimal('7.28107')), ('News', Decimal('7.03039')), ('History', Decimal('7.02745')), ('Short', Decimal('6.96460')), ('Biography', Decimal('6.95795')), ('Talk-Show', Decimal('6.91397')), ('Sport', Decimal('6.85957')), ('Music', Decimal('6.85124')), ('Animation', Decimal('6.79046')), ('Film-Noir', Decimal('6.78929')), ('War', Decimal('6.66138')), ('Reality-TV', Decimal('6.57793')), ('Game-Show', Decimal('6.56108')), ('Drama', Decimal('6.52474')), ('Crime', Decimal('6.48441')), ('Musical', Decimal('6.44720')), ('Family', Decimal('6.43262')), ('Adventure', Decimal('6.37782')), ('Romance', Decimal('6.37721')), ('Comedy', Decimal('6.32376')), ('Fantasy', Decimal('6.31158')), ('Mystery', Decimal('6.23750')), ('Action', Decimal('6.23484')), ('Western', Decimal('5.99575')), ('Thriller', Decimal('5.78859')), ('Sci-Fi', Decimal('5.68354')), ('Horror', Decimal('5.31306')), ('Adult', Decimal('4.20000'))]
+
+7
+[('The Walking Dead: The Final Season',)]
+
+Procedure 1 | SQL
+Time taken: 0.7919487953186035
+[('Documentary', Decimal('7.28107')), ('News', Decimal('7.03039')), ('History', Decimal('7.02745')), ('Short', Decimal('6.96460')), ('Biography', Decimal('6.95795')), ('Talk-Show', Decimal('6.91397')), ('Sport', Decimal('6.85957')), ('Music', Decimal('6.85124')), ('Animation', Decimal('6.79046')), ('Film-Noir', Decimal('6.78929')), ('War', Decimal('6.66138')), ('Reality-TV', Decimal('6.57793')), ('Game-Show', Decimal('6.56108')), ('Drama', Decimal('6.52474')), ('Crime', Decimal('6.48441')), ('Musical', Decimal('6.44720')), ('Family', Decimal('6.43262')), ('Adventure', Decimal('6.37782')), ('Romance', Decimal('6.37721')), ('Comedy', Decimal('6.32376')), ('Fantasy', Decimal('6.31158')), ('Mystery', Decimal('6.23750')), ('Action', Decimal('6.23484')), ('Western', Decimal('5.99575')), ('Thriller', Decimal('5.78859')), ('Sci-Fi', Decimal('5.68354')), ('Horror', Decimal('5.31306')), ('Adult', Decimal('4.20000'))]
+Procedure 1 | Python
+Time taken: 0.7350950241088867
+[('Documentary', '7.28107'), ('News', '7.03039'), ('History', '7.02745'), ('Short', '6.96460'), ('Biography', '6.95795'), ('Talk-Show', '6.91397'), ('Sport', '6.85957'), ('Music', '6.85124'), ('Animation', '6.79046'), ('Film-Noir', '6.78929'), ('War', '6.66138'), ('Reality-TV', '6.57793'), ('Game-Show', '6.56108'), ('Drama', '6.52474'), ('Crime', '6.48441'), ('Musical', '6.44720'), ('Family', '6.43262'), ('Adventure', '6.37782'), ('Romance', '6.37721'), ('Comedy', '6.32376'), ('Fantasy', '6.31158'), ('Mystery', '6.23750'), ('Action', '6.23484'), ('Western', '5.99575'), ('Thriller', '5.78859'), ('Sci-Fi', '5.68354'), ('Horror', '5.31306'), ('Adult', '4.20000')]
+
+Procedure 2
+FUBAR ORIGINAL RATING
+('FUBAR', Decimal('6.5'))
+FUBAR MODIFIED RATING
+('FUBAR', Decimal('5.4'))
